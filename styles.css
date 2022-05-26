@@ -29,9 +29,14 @@
 }
 
 .heading {
-    color: #E94D40;
+    color: #e94d40;
 }
 
 .sub-heading {
-    color: #0C243C;
+    color: #0c243c;
+}
+
+.form-control:focus {
+    border-color: #e94d40;
+    box-shadow: 0 0 0 0.25rem rgb(255 20 0 / 30%);
 }
