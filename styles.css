@@ -57,3 +57,10 @@
     --bs-btn-disabled-bg: #e94d40;
     --bs-btn-disabled-border-color: #e94d40;
 }
+
+@media only screen and (max-width: 768px) {
+    .col-md {
+        margin-right: auto!important;
+        margin-left: auto!important;
+    }
+}
