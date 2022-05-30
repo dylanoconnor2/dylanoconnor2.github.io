@@ -43,10 +43,17 @@ async function injectHTML(filePath, elem, name) {
  * This function injects a content of <filename> to
  * each div with the "include" attribute
  */
-function injectAll() {
-    document.querySelectorAll("[include]").forEach((elem) => {
-        injectHTML(elem.getAttribute("include"), elem, elem.getAttribute("name"));
+async function injectAll() {
+    await document.querySelectorAll("[include]").forEach(async (elem) => {
+        await injectHTML(elem.getAttribute("include"), elem, elem.getAttribute("name"));
     });
 }
 
-injectAll();
+let body = document.querySelector('body');
+
+body.classList.add('hidden');
+
+(async function() {
+    await injectAll();
+    await body.classList.remove('hidden');
+})()
